@@ -24,13 +24,10 @@ jobs:
       with:
         java-version: '11'
         distribution: 'adopt'
-        server-id: jfrog
-        server-username: mavenman
-        server-password: AP8Vmj9oNwuSuZTuLMmKVABfMiz
 
     - name: Build with Maven
       run: |
-        chmod +x ./mvnw && ./mvnw clean install -DskipTests=true
+        chmod +x ./mvnw && ./mvnw clean install -DskipTests=true -s settings.xml
 
     - name: Mend Unified Agent Scan
       env:
