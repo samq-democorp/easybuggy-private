@@ -29,13 +29,8 @@
     	</activation>
       <repositories>
         <repository>
-          <id>remote</id>
-          <name>demo-maven-remote</name>
-          <url>http://54.193.153.64:8081/artifactory/demo-maven-remote</url>
-        </repository>
-        <repository>
             <snapshots />
-            <id>snapshots</id>
+            <id>jfrog</id>
             <name>demo-libs-snapshot</name>
             <url>http://54.193.153.64:8081/artifactory/demo-libs-snapshot</url>
         </repository>
@@ -43,7 +38,7 @@
       <pluginRepositories>
         <pluginRepository>
           <snapshots />
-          <id>remote</id>
+          <id>jfrog</id>
           <name>demo-maven-remote</name>
           <url>http://54.193.153.64:8081/artifactory/demo-maven-remote</url>
         </pluginRepository>
