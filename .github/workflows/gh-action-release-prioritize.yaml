@@ -15,6 +15,8 @@ jobs:
       WS_RESOLVEALLDEPENDENCIES: false
       WS_MAVEN_RESOLVEDEPENDENCIES: true
       WS_MAVEN_AGGREGATEMODULES: true
+      jfrog-user: ${{secrets.JFROG_USER}}
+      jfrog-password: ${{secrets.JFROG_PASS}}
     runs-on: ubuntu-latest
 
     steps:
@@ -25,8 +27,8 @@ jobs:
         java-version: '11'
         distribution: 'adopt'
         server-id: jfrog
-        server-username: ${{secrets.JFROG_USER}}
-        server-password: ${{secrets.JFROG_PASS}}
+        server-username: $jfrog-user
+        server-password: $jfrog-pass
 
     - name: Build with Maven
       run: |
