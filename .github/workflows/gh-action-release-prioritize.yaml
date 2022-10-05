@@ -25,8 +25,11 @@ jobs:
         java-version: '11'
         distribution: 'adopt'
         server-id: jfrog
-        server-username: ${{secrets.JFROG_USER}}
-        server-password: ${{secrets.JFROG_PASS}}
+        server-username: $jfrog-user
+        server-password: $jfrog-pass
+      env:
+        jfrog-user: ${{secrets.JFROG_USER}}
+        jfrog-pass: ${{secrets.JFROG_PASS}}
 
     - name: Build with Maven
       run: chmod +x ./mvnw && ./mvnw clean install -DskipTests=true
