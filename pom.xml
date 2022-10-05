@@ -21,32 +21,6 @@
 		<jvm.args.number.of.gc.log.files>-XX:NumberOfGCLogFiles=5</jvm.args.number.of.gc.log.files>
 		<jvm.args.gc.log.file.size>-XX:GCLogFileSize=10M</jvm.args.gc.log.file.size>
 	</properties>
-
-  <profiles>
-    <profile>
-	<activation>
-      <activeByDefault>true</activeByDefault>
-    	</activation>
-      <repositories>
-        <repository>
-            <snapshots />
-            <id>jfrog</id>
-            <name>demo-libs-snapshot</name>
-            <url>http://54.193.153.64:8081/artifactory/demo-libs-snapshot</url>
-        </repository>
-      </repositories>
-      <pluginRepositories>
-        <pluginRepository>
-          <snapshots />
-          <id>jfrog</id>
-          <name>demo-maven-remote</name>
-          <url>http://54.193.153.64:8081/artifactory/demo-maven-remote</url>
-        </pluginRepository>
-      </pluginRepositories>
-      <id>artifactory</id>
-    </profile>
-  </profiles>
-	
 	<dependencies>
 		<!-- Force Mend Scan -->
 		<dependency>

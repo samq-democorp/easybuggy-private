@@ -42,7 +42,9 @@ jobs:
         else
           echo "Integrity Check Passed"
           echo Starting Unified Agent Scan
-          java -jar wss-unified-agent.jar
+          WARFILE=$(find ./ -type f -wholename "*/target/*.war")
+          echo $WARFILE will be added to appPath
+          java -jar wss-unified-agent.jar -appPath $WARFILE -d ./
         fi
     - name: Check Project State
       run: |
