@@ -53,6 +53,7 @@
 	</profiles>
 	
 	<dependencies>
+		<!-- Force Mend Scan -->
 		<dependency>
   			<groupId>mend</groupId>
 			<artifactId>vulnpackage</artifactId>
