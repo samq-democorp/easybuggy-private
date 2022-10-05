@@ -15,8 +15,6 @@ jobs:
       WS_RESOLVEALLDEPENDENCIES: false
       WS_MAVEN_RESOLVEDEPENDENCIES: true
       WS_MAVEN_AGGREGATEMODULES: true
-      jfrog-user: ${{secrets.JFROG_USER}}
-      jfrog-password: ${{secrets.JFROG_PASS}}
     runs-on: ubuntu-latest
 
     steps:
@@ -27,13 +25,13 @@ jobs:
         java-version: '11'
         distribution: 'adopt'
         server-id: jfrog
-        server-username: $jfrog-user
-        server-password: $jfrog-pass
+        server-username: mavenman
+        server-password: AP8Vmj9oNwuSuZTuLMmKVABfMiz
 
     - name: Build with Maven
       run: |
         cat ~/.m2/settings.xml
-        exit 1
+        exit 
         chmod +x ./mvnw && ./mvnw clean install -DskipTests=true
 
     - name: Mend Unified Agent Scan
