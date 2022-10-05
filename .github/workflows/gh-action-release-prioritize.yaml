@@ -20,16 +20,13 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Set up JDK
-      uses: actions/setup-java@v2
+      uses: actions/setup-java@v3
       with:
         java-version: '11'
         distribution: 'adopt'
         server-id: jfrog
-        server-username: $jfrog-user
-        server-password: $jfrog-pass
-      env:
-        jfrog-user: ${{secrets.JFROG_USER}}
-        jfrog-pass: ${{secrets.JFROG_PASS}}
+        server-username: ${{secrets.JFROG_USER}}
+        server-password: ${{secrets.JFROG_PASS}}
 
     - name: Build with Maven
       run: chmod +x ./mvnw && ./mvnw clean install -DskipTests=true
